@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "devstart": "./node_modules/nodemon/bin/nodemon.js server.js"
+    "build": "webpack --watch",
+    "devstart": "./node_modules/nodemon/bin/nodemon.js server.js",
+    "dev": "concurrently \"npm run start\" \"npm run build\""
   },
   "repository": {
     "type": "git",
@@ -19,10 +21,13 @@
   },
   "homepage": "https://github.com/TylerHofer/Portfolio#readme",
   "dependencies": {
+    "concurrently": "^3.6.0",
     "express": "^4.16.3",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.0.8"
   },
   "devDependencies": {
-    "nodemon": "^1.17.4"
+    "nodemon": "^1.18.2"
   }
 }
